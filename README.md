@@ -1,2 +1,2 @@
 # PersonalSite
-Repository for my Personal Homepage
+Repository for my personal site
