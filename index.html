@@ -7,12 +7,13 @@
     <title>Jorge Sarabia</title>
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <link rel="stylesheet" href="css/aos.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 
 <body>
     <!-- Barra de navegación -->
-    <section class="section" id="inicio">
+    <section class="section" id="inicio" data-aos="fade-down">
         <nav class="navbar is-fixed-top has-shadow" role="navigation" aria-label="main navigation">
             <div class="container">
 
@@ -59,11 +60,11 @@
     <!-- Final del navbar -->
 
     <!-- Seccion Home -->
-    <section class="section">
+    <section class="section is-medium" data-aos="zoom-in">
         <div class="container">
             <div class="columns is-centered">
                 <div class="column is-one-quarter">
-                    <figure class="image">
+                    <figure class="image imagen">
                         <img class="is-rounded" src="https://bulma.io/images/placeholders/480x480.png">
                     </figure>
                 </div>
@@ -107,7 +108,7 @@
     <!-- Fin seccion Home -->
 
     <!-- Seccion trabajos -->
-    <section class="section" id="portfolio">
+    <section class="section is-medium" id="portfolio">
         <div class="container">
 
             <div class="columns">
@@ -115,7 +116,7 @@
                 <!-- <div class="column"></div> -->
 
                 <div class="column">
-                    <div class="card">
+                    <div class="card" data-aos="fade-up">
                         <div class="card-content">
                             <div class="media">
                                 <div class="media-left">
@@ -126,7 +127,7 @@
                                 <div class="media-content">
                                     <p class="title is-4">PersonalSite</p>
                                     <p class="subtitle is-6">
-                                        <span class="tag is-warning">HTML</span>
+                                        <span class="tag mio">HTML</span>
                                         <span class="tag is-success">CSS</span>
                                         <span class="tag is-primary">Bulma</span>
                                     </p>
@@ -157,7 +158,7 @@
 
 
                 <div class="column">
-                    <div class="card">
+                    <div class="card" data-aos="fade-up">
                         <div class="card-content">
                             <div class="media">
                                 <div class="media-left">
@@ -201,7 +202,7 @@
                 <div class="column"> </div>
 
                 <!--div class="column">
-                    <div class="card">
+                    <div class="card" data-aos="fade-left">
                         <div class="card-content">
                             <div class="media">
                                 <div class="media-left">
@@ -332,10 +333,10 @@
     <!-- Fin seccion trabajos -->
 
     <!-- Contacto -->
-    <section class="section" id="contact">
+    <section class="section is-medium" id="contact">
         <div class="container">
             <div class="columns">
-                <div class="column has-text-centered">
+                <div class="column has-text-centered" data-aos="flip-down">
                     <a class="button is-large" href="https://github.com/jorgesarabia" target="_blank">
                         <span class="icon">
                             <i class="fab fa-github"></i>
@@ -344,7 +345,7 @@
                     </a>
                 </div>
 
-                <div class="column has-text-centered">
+                <div class="column has-text-centered" data-aos="flip-down">
                     <a class="button is-large" href="https://www.linkedin.com/in/jorge-rafael-sarabia/" target="_blank">
                         <span class="icon">
                             <i class="fab fa-linkedin"></i>
@@ -353,7 +354,7 @@
                     </a>
                 </div>
 
-                <div class="column has-text-centered">
+                <div class="column has-text-centered" data-aos="flip-down">
                     <a class="button is-large" href="https://www.facebook.com/jorge.r.sarabia.9" target="_blank">
                         <span class="icon">
                             <i class="fab fa-facebook"></i>
@@ -362,7 +363,7 @@
                     </a>
                 </div>
 
-                <div class="column has-text-centered">
+                <div class="column has-text-centered" data-aos="flip-down">
                     <a class="button is-large" href="https://twitter.com/ingjorgesarabia" target="_blank">
                         <span class="icon">
                             <i class="fab fa-twitter"></i>
@@ -388,6 +389,12 @@
     </section>
     <!-- Fin -->
 
+    <script src="aos/aos.js"></script>
+    <script type="text/javascript">
+        AOS.init({
+            duration:800,
+        });
+    </script>
 </body>
 
 </html>
