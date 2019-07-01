@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/my.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
 </head>
 
 <body>
@@ -24,14 +25,15 @@
                     </a>
 
                     <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                        data-target="navbarBasicExample">
+                        data-target="navbarBasicExample" id="burger-btn" v-on:click="changeState()"
+                        v-bind:class="{'is-active':isActive}">
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                     </a>
                 </div>
 
-                <div id="navbarBasicExample" class="navbar-menu">
+                <div id="navbar" class="navbar-menu" v-bind:class="{'is-active': isActive}">
                     <div class="navbar-start">
                         <a class="navbar-item" href="#inicio">
                             Inicio
@@ -46,15 +48,20 @@
                         </a>
 
                     </div>
-
-                    <!--div class="navbar-end">
+                    <div class="navbar-end">
                         <div class="navbar-item">
-                            <a class="navbar-item button is-link is-rounded" href="#">
-                                Curriculum
-                            </a>
+                            <div class="buttons">
+                                <a class="button is-primary">
+                                    <strong>Sign up</strong>
+                                </a>
+                                <a class="button is-light">
+                                    Log in
+                                </a>
+                            </div>
                         </div>
-                    </div-->
+                    </div>
                 </div>
+
             </div>
         </nav>
     </section>
@@ -392,9 +399,24 @@
 
     <script src="aos/aos.js"></script>
     <script type="text/javascript">
-        AOS.init({
-            duration:800,
+
+        let navbar = new Vue({
+            el: '#navbar',
+            data: { isActive: false }
         });
+
+        let burger = new Vue({
+            el: '#burger-btn',
+            methods: {
+                changeState: function () {
+                    navbar.isActive = !navbar.isActive;
+                    burger.isActive = !burger.isActive;
+                }
+            },
+            data: { isActive: false }
+        })
+
+        AOS.init({ duration: 900, });
     </script>
 </body>
 
