@@ -1,3 +1,7 @@
 .tag:not(body){
     margin-top: 5px;
 }
+
+#inicio{
+    padding-top: 5rem;
+}

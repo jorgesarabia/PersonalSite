@@ -14,202 +14,191 @@
 </head>
 
 <body>
-    <!-- Barra de navegación -->
-    <section class="section" id="inicio" data-aos="fade-down">
-        <nav class="navbar is-fixed-top has-shadow" role="navigation" aria-label="main navigation">
+    <div id="app">
+        <!-- Barra de navegación -->
+            <nav class="navbar is-fixed-top has-shadow" role="navigation" aria-label="main navigation">
+                <br v-if="isBR">
+                <div class="container">
+
+                    <div class="navbar-brand">
+                        <a class="navbar-item" href="index.html">
+                            <img src="images/logo.png" width="112" height="28">
+                        </a>
+
+                        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                            data-target="navbarBasicExample" id="burger-btn" v-on:click="isActive = !isActive"
+                            v-bind:class="{'is-active':isActive}">
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                        </a>
+                    </div>
+
+                    <div id="navbar" class="navbar-menu" v-bind:class="{'is-active': isActive}">
+                        <div class="navbar-start">
+                            <a class="navbar-item" href="#inicio">
+                                Inicio
+                            </a>
+
+                            <a class="navbar-item" href="#portfolio">
+                                Portfolio
+                            </a>
+
+                            <a class="navbar-item" href="#contact">
+                                Contacto
+                            </a>
+
+                        </div>
+                    </div>
+
+                </div><!--Fin container-->
+            </nav>
+        <!-- Final del navbar -->
+
+        <!-- Seccion Home -->
+        <section class="section is-medium" data-aos="zoom-in" id="inicio">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-one-quarter">
+                        <figure class="image imagen">
+                            <img class="is-rounded" src="https://bulma.io/images/placeholders/480x480.png">
+                        </figure>
+                    </div>
+                    <div class="column">
+                        <h1 class="title">
+                            Jorge Sarabia
+                        </h1>
+                        <p class="subtitle">
+                            Acerca de mí.
+                        </p>
+                        <p>
+                            Ingeniero electrónico y desarrollador de software. Me gusta aprender nuevas tecnologías
+                            y seguir creciendo en el área profesional. Trabajo para dos empresas utilizando
+                            Angular, Ionic y Jasmine. Actualmente estoy mejorando mis habilidades con Python y Kotlin.
+                        </p>
+                        <br>
+                        <p class="subtitle is-6">
+                            <span class="tag is-info">JavaScript</span>
+                            <span class="tag is-warning">Python</span>
+                            <span class="tag is-danger">Kotlin</span>
+                            <span class="tag is-link">MySQL</span>
+                            <span class="tag is-black">HTML</span>
+                            <span class="tag is-info">CSS</span>
+                            <span class="tag is-dark">LaTex</span>
+                            <span class="tag is-primary">PHP</span>
+                            <span class="tag is-primary">Java</span>
+                            <span class="tag is-success">C</span>
+                            <br>
+                            <span class="tag is-info">Ionic</span>
+                            <span class="tag is-primary">Jasmine</span>
+                            <span class="tag is-link">Angular</span>
+                            <span class="tag is-danger">Flask</span>
+                            <span class="tag is-primary">Bulma</span>
+                            <span class="tag is-link">Boostrap</span>
+                            <span class="tag is-success">Laravel</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Fin seccion Home -->
+
+        <!-- Seccion trabajos -->
+        <section class="section is-medium" id="portfolio">
             <div class="container">
 
-                <div class="navbar-brand">
-                    <a class="navbar-item" href="index.html">
-                        <img src="images/logo.png" width="112" height="28">
-                    </a>
+                <div class="columns">
 
-                    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                        data-target="navbarBasicExample" id="burger-btn" v-on:click="changeState()"
-                        v-bind:class="{'is-active':isActive}">
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                    </a>
-                </div>
+                    <!-- <div class="column"></div> -->
 
-                <div id="navbar" class="navbar-menu" v-bind:class="{'is-active': isActive}">
-                    <div class="navbar-start">
-                        <a class="navbar-item" href="#inicio">
-                            Inicio
-                        </a>
-
-                        <a class="navbar-item" href="#portfolio">
-                            Portfolio
-                        </a>
-
-                        <a class="navbar-item" href="#contact">
-                            Contacto
-                        </a>
-
-                    </div>
-                    <div class="navbar-end">
-                        <div class="navbar-item">
-                            <div class="buttons">
-                                <a class="button is-primary">
-                                    <strong>Sign up</strong>
-                                </a>
-                                <a class="button is-light">
-                                    Log in
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </nav>
-    </section>
-    <!-- Final del navbar -->
-
-    <!-- Seccion Home -->
-    <section class="section is-medium" data-aos="zoom-in">
-        <div class="container">
-            <div class="columns is-centered">
-                <div class="column is-one-quarter">
-                    <figure class="image imagen">
-                        <img class="is-rounded" src="https://bulma.io/images/placeholders/480x480.png">
-                    </figure>
-                </div>
-                <div class="column">
-                    <h1 class="title">
-                        Jorge Sarabia
-                    </h1>
-                    <p class="subtitle">
-                        Acerca de mí.
-                    </p>
-                    <p>
-                        Ingeniero electrónico y desarrollador de software. Me gusta aprender nuevas tecnologías
-                        y seguir creciendo en el área profesional. Trabajo para dos empresas utilizando
-                        Angular, Ionic y Jasmine. Actualmente estoy mejorando mis habilidades con Python y Kotlin.
-                    </p>
-                    <br>
-                    <p class="subtitle is-6">
-                        <span class="tag is-info">JavaScript</span>
-                        <span class="tag is-warning">Python</span>
-                        <span class="tag is-danger">Kotlin</span>
-                        <span class="tag is-link">MySQL</span>
-                        <span class="tag is-black">HTML</span>
-                        <span class="tag is-info">CSS</span>
-                        <span class="tag is-dark">LaTex</span>
-                        <span class="tag is-primary">PHP</span>
-                        <span class="tag is-primary">Java</span>
-                        <span class="tag is-success">C</span>
-                        <br>
-                        <span class="tag is-info">Ionic</span>
-                        <span class="tag is-primary">Jasmine</span>
-                        <span class="tag is-link">Angular</span>
-                        <span class="tag is-danger">Flask</span>
-                        <span class="tag is-primary">Bulma</span>
-                        <span class="tag is-link">Boostrap</span>
-                        <span class="tag is-success">Laravel</span>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Fin seccion Home -->
-
-    <!-- Seccion trabajos -->
-    <section class="section is-medium" id="portfolio">
-        <div class="container">
-
-            <div class="columns">
-
-                <!-- <div class="column"></div> -->
-
-                <div class="column">
-                    <div class="card" data-aos="fade-up">
-                        <div class="card-content">
-                            <div class="media">
-                                <div class="media-left">
-                                    <figure class="image is-70x70">
-                                        <img class="is-rounded" src="images/logo96x96.png" alt="Placeholder image">
-                                    </figure>
-                                </div>
-                                <div class="media-content">
-                                    <p class="title is-4">PersonalSite</p>
-                                    <p class="subtitle is-6">
-                                        <span class="tag mio">HTML</span>
-                                        <span class="tag is-success">CSS</span>
-                                        <span class="tag is-primary">Bulma</span>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="content">
-                                Es mi página personal, donde expongo algunos trabajos e
-                                información de contacto.
-                                <br> <br>
-                                <div class="has-text-centered">
-                                    <div>
-                                        <p class="is-size-3">
-                                            <a href="https://github.com/jorgesarabia/PersonalSite" target="_blank">
-                                                <i class="fab fa-github"></i>
-                                            </a>
+                    <div class="column">
+                        <div class="card" data-aos="fade-up">
+                            <div class="card-content">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <figure class="image is-70x70">
+                                            <img class="is-rounded" src="images/logo96x96.png" alt="Placeholder image">
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <p class="title is-4">PersonalSite</p>
+                                        <p class="subtitle is-6">
+                                            <span class="tag mio">HTML</span>
+                                            <span class="tag is-success">CSS</span>
+                                            <span class="tag is-primary">Bulma</span>
                                         </p>
                                     </div>
-                                    <p class="is-size-7">
-                                        Primer commit<br>
-                                        <time datetime="2019-06-25">25/06/2019 - 06:56:02 PM</time>
-                                    </p>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-
-                <div class="column">
-                    <div class="card" data-aos="fade-up">
-                        <div class="card-content">
-                            <div class="media">
-                                <div class="media-left">
-                                    <figure class="image is-70x70">
-                                        <img class="is-rounded" src="images/Jasmine_logo96x96.png"
-                                            alt="Placeholder image">
-                                    </figure>
-                                </div>
-                                <div class="media-content">
-                                    <p class="title is-4">vscode-jasmine</p>
-                                    <p class="subtitle is-6">
-                                        <span class="tag is-warning">VSC extension</span>
-                                        <!-- <span class="tag is-success">CSS</span> -->
-                                        <!-- <span class="tag is-primary">Bulma</span> -->
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="content">
-                                Fork de un <a href="https://github.com/xabikos/vscode-jasmine" target="_blank">
-                                    snippet </a> adaptado al Coding Style Guide que utilizamos en
-                                <a href="https://www.notedanalytics.com/" target="_blank">Noted Analytics</a>
-                                <br> <br>
-                                <div class="has-text-centered">
-                                    <div>
-                                        <p class="is-size-3">
-                                            <a href="https://github.com/jorgesarabia/vscode-jasmine" target="_blank">
-                                                <i class="fab fa-github"></i>
-                                            </a>
+                                <div class="content">
+                                    Es mi página personal, donde expongo algunos trabajos e
+                                    información de contacto.
+                                    <br> <br>
+                                    <div class="has-text-centered">
+                                        <div>
+                                            <p class="is-size-3">
+                                                <a href="https://github.com/jorgesarabia/PersonalSite" target="_blank">
+                                                    <i class="fab fa-github"></i>
+                                                </a>
+                                            </p>
+                                        </div>
+                                        <p class="is-size-7">
+                                            Primer commit<br>
+                                            <time datetime="2019-06-25">25/06/2019 - 06:56:02 PM</time>
                                         </p>
                                     </div>
-                                    <p class="is-size-7">
-                                        Primer commit<br>
-                                        <time datetime="2019-05-13">13/05/2019 - 03:21:21 PM</time>
-                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="column"> </div>
 
-                <!--div class="column">
+
+                    <div class="column">
+                        <div class="card" data-aos="fade-up">
+                            <div class="card-content">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <figure class="image is-70x70">
+                                            <img class="is-rounded" src="images/Jasmine_logo96x96.png"
+                                                alt="Placeholder image">
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <p class="title is-4">vscode-jasmine</p>
+                                        <p class="subtitle is-6">
+                                            <span class="tag is-warning">VSC extension</span>
+                                            <!-- <span class="tag is-success">CSS</span> -->
+                                            <!-- <span class="tag is-primary">Bulma</span> -->
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="content">
+                                    Fork de un <a href="https://github.com/xabikos/vscode-jasmine" target="_blank">
+                                        snippet </a> adaptado al Coding Style Guide que utilizamos en
+                                    <a href="https://www.notedanalytics.com/" target="_blank">Noted Analytics</a>
+                                    <br> <br>
+                                    <div class="has-text-centered">
+                                        <div>
+                                            <p class="is-size-3">
+                                                <a href="https://github.com/jorgesarabia/vscode-jasmine"
+                                                    target="_blank">
+                                                    <i class="fab fa-github"></i>
+                                                </a>
+                                            </p>
+                                        </div>
+                                        <p class="is-size-7">
+                                            Primer commit<br>
+                                            <time datetime="2019-05-13">13/05/2019 - 03:21:21 PM</time>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column"> </div>
+
+                    <!--div class="column">
                     <div class="card" data-aos="fade-left">
                         <div class="card-content">
                             <div class="media">
@@ -240,10 +229,10 @@
                     </div>
                 </div-->
 
-                <!-- <div class="column"></div> -->
-            </div>
+                    <!-- <div class="column"></div> -->
+                </div>
 
-            <!--div class="columns">
+                <!--div class="columns">
                 <div class="column">
                     <div class="card">
                         <div class="card-content">
@@ -336,87 +325,77 @@
                 </div>
             </div-->
 
-        </div>
-    </section>
-    <!-- Fin seccion trabajos -->
-
-    <!-- Contacto -->
-    <section class="section is-medium" id="contact">
-        <div class="container">
-            <div class="columns">
-                <div class="column has-text-centered" data-aos="flip-down">
-                    <a class="button is-large" href="https://github.com/jorgesarabia" target="_blank">
-                        <span class="icon">
-                            <i class="fab fa-github"></i>
-                        </span>
-                        <span>GitHub</span>
-                    </a>
-                </div>
-
-                <div class="column has-text-centered" data-aos="flip-down">
-                    <a class="button is-large" href="https://www.linkedin.com/in/jorge-rafael-sarabia/" target="_blank">
-                        <span class="icon">
-                            <i class="fab fa-linkedin"></i>
-                        </span>
-                        <span>LinkedIn</span>
-                    </a>
-                </div>
-
-                <div class="column has-text-centered" data-aos="flip-down">
-                    <a class="button is-large" href="https://www.facebook.com/jorge.r.sarabia.9" target="_blank">
-                        <span class="icon">
-                            <i class="fab fa-facebook"></i>
-                        </span>
-                        <span>Facebook</span>
-                    </a>
-                </div>
-
-                <div class="column has-text-centered" data-aos="flip-down">
-                    <a class="button is-large" href="https://twitter.com/ingjorgesarabia" target="_blank">
-                        <span class="icon">
-                            <i class="fab fa-twitter"></i>
-                        </span>
-                        <span>Twitter</span>
-                    </a>
-                </div>
-
             </div>
-        </div>
-    </section>
-    <!-- Fin seccion Contacto -->
+        </section>
+        <!-- Fin seccion trabajos -->
 
-    <!-- Footer -->
-    <section class="section">
-        <div class="container">
-            <footer class="footer">
-                <div class="content has-text-centered">
-                    <p> Jorge Sarabia 2019 </p>
+        <!-- Contacto -->
+        <section class="section is-medium" id="contact">
+            <div class="container">
+                <div class="columns">
+                    <div class="column has-text-centered" data-aos="flip-down">
+                        <a class="button is-large" href="https://github.com/jorgesarabia" target="_blank">
+                            <span class="icon">
+                                <i class="fab fa-github"></i>
+                            </span>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+
+                    <div class="column has-text-centered" data-aos="flip-down">
+                        <a class="button is-large" href="https://www.linkedin.com/in/jorge-rafael-sarabia/"
+                            target="_blank">
+                            <span class="icon">
+                                <i class="fab fa-linkedin"></i>
+                            </span>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+
+                    <div class="column has-text-centered" data-aos="flip-down">
+                        <a class="button is-large" href="https://www.facebook.com/jorge.r.sarabia.9" target="_blank">
+                            <span class="icon">
+                                <i class="fab fa-facebook"></i>
+                            </span>
+                            <span>Facebook</span>
+                        </a>
+                    </div>
+
+                    <div class="column has-text-centered" data-aos="flip-down">
+                        <a class="button is-large" href="https://twitter.com/ingjorgesarabia" target="_blank">
+                            <span class="icon">
+                                <i class="fab fa-twitter"></i>
+                            </span>
+                            <span>Twitter</span>
+                        </a>
+                    </div>
+
                 </div>
-            </footer>
-        </div>
-    </section>
-    <!-- Fin -->
+            </div>
+        </section>
+        <!-- Fin seccion Contacto -->
+
+        <!-- Footer -->
+        <section class="section">
+            <div class="container">
+                <footer class="footer">
+                    <div class="content has-text-centered">
+                        <p> Jorge Sarabia 2019 </p>
+                    </div>
+                </footer>
+            </div>
+        </section>
+        <!-- Fin -->
+
+    </div>
 
     <script src="aos/aos.js"></script>
     <script type="text/javascript">
-
-        let navbar = new Vue({
-            el: '#navbar',
-            data: { isActive: false }
+        let app = new Vue({
+            el: '#app',
+            data: { isActive: false, isBR: false }
         });
-
-        let burger = new Vue({
-            el: '#burger-btn',
-            methods: {
-                changeState: function () {
-                    navbar.isActive = !navbar.isActive;
-                    burger.isActive = !burger.isActive;
-                }
-            },
-            data: { isActive: false }
-        })
-
-        AOS.init({ duration: 900, });
+        AOS.init({ duration: 950, });
     </script>
 </body>
 
