@@ -16,43 +16,44 @@
 <body>
     <div id="app">
         <!-- Barra de navegación -->
-            <nav class="navbar is-fixed-top has-shadow" role="navigation" aria-label="main navigation">
-                <br v-if="isBR">
-                <div class="container">
+        <nav class="navbar is-fixed-top has-shadow" role="navigation" aria-label="main navigation">
+            <br v-if="isBR">
+            <div class="container">
 
-                    <div class="navbar-brand">
-                        <a class="navbar-item" href="index.html">
-                            <img src="images/logo.png" width="112" height="28">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="index.html">
+                        <img src="images/logo.png" width="112" height="28">
+                    </a>
+
+                    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                        data-target="navbarBasicExample" id="burger-btn" v-on:click="isActive = !isActive"
+                        v-bind:class="{'is-active':isActive}">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+
+                <div id="navbar" class="navbar-menu" v-bind:class="{'is-active': isActive}">
+                    <div class="navbar-start">
+                        <a class="navbar-item" href="#inicio">
+                            Inicio
                         </a>
 
-                        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                            data-target="navbarBasicExample" id="burger-btn" v-on:click="isActive = !isActive"
-                            v-bind:class="{'is-active':isActive}">
-                            <span aria-hidden="true"></span>
-                            <span aria-hidden="true"></span>
-                            <span aria-hidden="true"></span>
+                        <a class="navbar-item" href="#portfolio">
+                            Portfolio
                         </a>
+
+                        <a class="navbar-item" href="#contact">
+                            Contacto
+                        </a>
+
                     </div>
+                </div>
 
-                    <div id="navbar" class="navbar-menu" v-bind:class="{'is-active': isActive}">
-                        <div class="navbar-start">
-                            <a class="navbar-item" href="#inicio">
-                                Inicio
-                            </a>
-
-                            <a class="navbar-item" href="#portfolio">
-                                Portfolio
-                            </a>
-
-                            <a class="navbar-item" href="#contact">
-                                Contacto
-                            </a>
-
-                        </div>
-                    </div>
-
-                </div><!--Fin container-->
-            </nav>
+            </div>
+            <!--Fin container-->
+        </nav>
         <!-- Final del navbar -->
 
         <!-- Seccion Home -->
@@ -73,11 +74,11 @@
                         </p>
                         <p>
                             Ingeniero electrónico y desarrollador de software. Me gusta aprender nuevas tecnologías
-                            y seguir creciendo en el área profesional. Actualmente trabajo con los frameworks 
+                            y seguir creciendo en el área profesional. Actualmente trabajo con los frameworks
                             Angular, Ionic y Jasmine y estoy mejorando mis habilidades con Python y Kotlin.
                         </p>
                         <br>
-                        <p class="subtitle is-6">
+                        <p class="subtitle is-6 is-hidden-mobile">
                             <span class="tag is-info">JavaScript</span>
                             <span class="tag is-warning">Python</span>
                             <span class="tag is-danger">Kotlin</span>
@@ -97,9 +98,31 @@
                             <!-- <span class="tag is-link">Boostrap</span> -->
                             <!-- <span class="tag is-success">Laravel</span> -->
                         </p>
+                        <p class="subtitle is-6 is-hidden-tablet">
+                            <span class="tag is-info my-mobile-tag">JavaScript</span>
+                            <span class="tag is-warning my-mobile-tag">Python</span>
+                            <span class="tag is-danger my-mobile-tag">Kotlin</span>
+                            <span class="tag is-link my-mobile-tag">MySQL</span>
+                            <span class="tag is-black my-mobile-tag">HTML</span>
+                            <span class="tag is-info my-mobile-tag">CSS</span>
+                            <!-- <span class="tag is-dark my-mobile-tag">LaTex</span> -->
+                            <!-- <span class="tag is-primary my-mobile-tag">PHP</span> -->
+                            <!-- <span class="tag is-primary my-mobile-tag">Java</span> -->
+                            <!-- <span class="tag is-success my-mobile-tag">C</span> -->
+                            <br>
+                            <span class="tag is-info my-mobile-tag">Ionic</span>
+                            <span class="tag is-primary my-mobile-tag">Jasmine</span>
+                            <span class="tag is-link my-mobile-tag">Angular</span>
+                            <span class="tag is-danger my-mobile-tag">Flask</span>
+                            <span class="tag is-primary my-mobile-tag">Bulma</span>
+                            <!-- <span class="tag is-link my-mobile-tag>Boostrap</span> -->
+                            <!-- <span class="tag is-success my-mobile-tag">Laravel</span> -->
+                        </p>
                     </div>
                 </div>
+                <!--End columns-->
             </div>
+            <!--End container-->
         </section>
         <!-- Fin seccion Home -->
 
@@ -109,14 +132,13 @@
 
                 <div class="columns">
 
-                    <!-- <div class="column"></div> -->
-
                     <div class="column">
-                        <div class="card" data-aos="fade-up">
+                        <!--Card desktop-->
+                        <div class="card is-hidden-mobile" data-aos="fade-up">
                             <div class="card-content">
                                 <div class="media">
                                     <div class="media-left">
-                                        <figure class="image is-70x70">
+                                        <figure class="image is-96x96">
                                             <img class="is-rounded" src="images/logo96x96.png" alt="Placeholder image">
                                         </figure>
                                     </div>
@@ -151,15 +173,45 @@
                                 </div>
                             </div>
                         </div>
+                        <!--Card desktop-->
+                        <!-- Mobile -->
+                        <div class="card is-hidden-tablet" data-aos="fade-right">
+                            <div class="card-content my-mobile-card-content">
+                                <div class="media my-mobile-card-media">
+                                    <div class="media-left">
+                                        <figure class="image is-64x64">
+                                            <img class="is-rounded" src="images/logo64x64.png"
+                                                alt="Placeholder image">
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <p class="title is-6"> PersonalSite </p>
+                                        <p class="subtitle is-7">
+                                            Es mi página personal, donde expongo algunos trabajos e
+                                            información de contacto.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="content is-centered">
+                                    <div class="tags">
+                                        <span class="tag is-warning my-mobile-tag">HTML</span>
+                                        <span class="tag is-success my-mobile-tag">CSS</span>
+                                        <span class="tag is-primary my-mobile-tag">Bulma</span>
+                                        <span class="tag is-info my-mobile-tag">Javascript</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Mobile-->
                     </div>
-
+                    <!--End Column-->
 
                     <div class="column">
-                        <div class="card" data-aos="fade-up">
+                        <div class="card is-hidden-mobile" data-aos="fade-up">
                             <div class="card-content">
                                 <div class="media">
                                     <div class="media-left">
-                                        <figure class="image is-70x70">
+                                        <figure class="image is-96x96">
                                             <img class="is-rounded" src="images/Jasmine_logo96x96.png"
                                                 alt="Placeholder image">
                                         </figure>
@@ -168,8 +220,6 @@
                                         <p class="title is-4">vscode-jasmine</p>
                                         <p class="subtitle is-6">
                                             <span class="tag is-warning">VSC extension</span>
-                                            <!-- <span class="tag is-success">CSS</span> -->
-                                            <!-- <span class="tag is-primary">Bulma</span> -->
                                         </p>
                                     </div>
                                 </div>
@@ -196,137 +246,78 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="column"> </div>
-
-                    <!--div class="column">
-                    <div class="card" data-aos="fade-left">
-                        <div class="card-content">
-                            <div class="media">
-                                <div class="media-left">
-                                    <figure class="image is-70x70">
-                                        <img class="is-rounded" src="https://bulma.io/images/placeholders/96x96.png"
-                                            alt="Placeholder image">
-                                    </figure>
+                        <!-- Mobile -->
+                        <div class="card is-hidden-tablet" data-aos="fade-right">
+                            <div class="card-content my-mobile-card-content">
+                                <div class="media my-mobile-card-media">
+                                    <div class="media-left">
+                                        <figure class="image is-64x64">
+                                            <img class="is-rounded" src="images/Jasmine_logo64x64.png"
+                                                alt="Placeholder image">
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <p class="title is-6"> vscode-jasmine </p>
+                                        <p class="subtitle is-7">
+                                            Fork de un <a href="https://github.com/xabikos/vscode-jasmine"
+                                                target="_blank">
+                                                snippet </a> adaptado al Coding Style Guide que utilizamos en
+                                            <a href="https://www.notedanalytics.com/" target="_blank">Noted
+                                                Analytics</a>
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="media-content">
-                                    <p class="title is-4">Título</p>
-                                    <p class="subtitle is-6">
-                                        <span class="tag is-info">Lenguaje</span>
-                                        <span class="tag is-info">Lenguaje</span>
-                                        <span class="tag is-info">Lenguaje</span>
-                                    </p>
+                                <div class="content is-centered">
+                                    <div class="tags">
+                                        <span class="tag is-warning my-mobile-tag">VSC extension</span>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                                <a href="#">#css</a> <a href="#">#responsive</a>
-                                <br>
-                                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
                             </div>
                         </div>
+                        <!--End Mobile-->
                     </div>
-                </div-->
+                    <!--End Column-->
 
-                    <!-- <div class="column"></div> -->
-                </div>
-
-                <!--div class="columns">
-                <div class="column">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="media">
-                                <div class="media-left">
-                                    <figure class="image is-70x70">
-                                        <img class="is-rounded" src="https://bulma.io/images/placeholders/96x96.png"
-                                            alt="Placeholder image">
-                                    </figure>
+                    <div class="column">
+                        <!-- Mobile -->
+                        <!--div class="card is-hidden-tablet" data-aos="fade-right">
+                            <div class="card-content my-mobile-card-content">
+                                <div class="media my-mobile-card-media">
+                                    <div class="media-left">
+                                        <figure class="image is-64x64">
+                                            <img class="is-rounded" src="https://bulma.io/images/placeholders/64x64.png"
+                                                alt="Placeholder image">
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <p class="title is-6">
+                                            Título
+                                        </p>
+                                        <p class="subtitle is-7">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                            Phasellus nec iaculis mauris.
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="media-content">
-                                    <p class="title is-4">Título</p>
-                                    <p class="subtitle is-6">
-                                        <span class="tag is-info">Lenguaje</span>
-                                        <span class="tag is-info">Lenguaje</span>
-                                        <span class="tag is-info">Lenguaje</span>
-                                    </p>
+                                <div class="content is-centered">
+                                    <div class="tags">
+                                        <span class="tag is-warning my-mobile-tag">HTML</span>
+                                        <span class="tag is-success my-mobile-tag">CSS</span>
+                                        <span class="tag is-primary my-mobile-tag">Bulma</span>
+                                        <span class="tag is-info my-mobile-tag">Javascript</span>
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                                <a href="#">#css</a> <a href="#">#responsive</a>
-                                <br>
-                                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                            </div>
-                        </div>
+                        </div-->
+                        <!--End Mobile-->
                     </div>
-                </div>
-                <div class="column">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="media">
-                                <div class="media-left">
-                                    <figure class="image is-70x70">
-                                        <img class="is-rounded" src="https://bulma.io/images/placeholders/96x96.png"
-                                            alt="Placeholder image">
-                                    </figure>
-                                </div>
-                                <div class="media-content">
-                                    <p class="title is-4">Título</p>
-                                    <p class="subtitle is-6">
-                                        <span class="tag is-info">Lenguaje</span>
-                                        <span class="tag is-info">Lenguaje</span>
-                                        <span class="tag is-info">Lenguaje</span>
-                                    </p>
-                                </div>
-                            </div>
+                    <!--End Column-->
 
-                            <div class="content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                                <a href="#">#css</a> <a href="#">#responsive</a>
-                                <br>
-                                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                <div class="column">
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="media">
-                                <div class="media-left">
-                                    <figure class="image is-70x70">
-                                        <img class="is-rounded" src="https://bulma.io/images/placeholders/96x96.png"
-                                            alt="Placeholder image">
-                                    </figure>
-                                </div>
-                                <div class="media-content">
-                                    <p class="title is-4">Título</p>
-                                    <p class="subtitle is-6">
-                                        <span class="tag is-info">Lenguaje</span>
-                                        <span class="tag is-info">Lenguaje</span>
-                                        <span class="tag is-info">Lenguaje</span>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="content">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                                <a href="#">#css</a> <a href="#">#responsive</a>
-                                <br>
-                                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div-->
+                <!--End columns-->
 
             </div>
+            <!--End container-->
         </section>
         <!-- Fin seccion trabajos -->
 
