@@ -37,16 +37,30 @@
                 <div id="navbar" class="navbar-menu" v-bind:class="{'is-active': isActive}">
                     <div class="navbar-start">
                         <a class="navbar-item" href="#inicio">
-                            Inicio
+                            {{menuHome[lang]}}
                         </a>
 
                         <a class="navbar-item" href="#portfolio">
-                            Portfolio
+                            {{menuPortfolio[lang]}}
                         </a>
 
                         <a class="navbar-item" href="#contact">
-                            Contacto
+                            {{menuContact[lang]}}
                         </a>
+
+                    </div>
+                    <div class="navbar-end">
+
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link">
+                                {{langOptPri[lang]}}
+                            </a>
+                            <div class="navbar-dropdown">
+                                <a class="navbar-item" @click="changeLang(lang)">
+                                    {{langOptSeg[lang]}}
+                                </a>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -69,14 +83,8 @@
                         <h1 class="title">
                             Jorge Sarabia
                         </h1>
-                        <p class="subtitle">
-                            Acerca de mí.
-                        </p>
-                        <p>
-                            Ingeniero electrónico y desarrollador de software. Me gusta aprender nuevas tecnologías
-                            y seguir creciendo en el área profesional. Actualmente trabajo con los frameworks
-                            Angular, Ionic y Jasmine y estoy mejorando mis habilidades con Python y Kotlin.
-                        </p>
+                        <p class="subtitle"> {{homeSubtitle[lang]}} </p>
+                        <p> {{homeContent[lang]}} </p>
                         <br>
                         <p class="subtitle is-6 is-hidden-mobile">
                             <span class="tag is-info">JavaScript</span>
@@ -154,8 +162,7 @@
                                 </div>
 
                                 <div class="content">
-                                    Es mi página personal, donde expongo algunos trabajos e
-                                    información de contacto.
+                                    {{personalSiteDesc[lang]}}
                                     <br> <br>
                                     <div class="has-text-centered">
                                         <div>
@@ -166,7 +173,7 @@
                                             </p>
                                         </div>
                                         <p class="is-size-7">
-                                            Primer commit<br>
+                                            {{firstCommit[lang]}}<br>
                                             <time datetime="2019-06-25">25/06/2019 - 06:56:02 PM</time>
                                         </p>
                                     </div>
@@ -178,7 +185,8 @@
                         <div class="card is-hidden-tablet" data-aos="fade-right">
                             <div class="card-content my-mobile-card-content">
                                 <div class="media my-mobile-card-media">
-                                    <div class="media-left" @click="newTab('https://github.com/jorgesarabia/PersonalSite')">
+                                    <div class="media-left"
+                                        @click="newTab('https://github.com/jorgesarabia/PersonalSite')">
                                         <figure class="image is-64x64">
                                             <img class="is-rounded" src="images/logo64x64.png" alt="Placeholder image">
                                         </figure>
@@ -249,7 +257,8 @@
                         <div class="card is-hidden-tablet" data-aos="fade-right">
                             <div class="card-content my-mobile-card-content">
                                 <div class="media my-mobile-card-media">
-                                    <div class="media-left" @click="newTab('https://github.com/jorgesarabia/vscode-jasmine')">
+                                    <div class="media-left"
+                                        @click="newTab('https://github.com/jorgesarabia/vscode-jasmine')">
                                         <figure class="image is-64x64">
                                             <img class="is-rounded" src="images/Jasmine_logo64x64.png"
                                                 alt="Placeholder image">
@@ -384,13 +393,50 @@
     <script type="text/javascript">
         let app = new Vue({
             el: '#app',
-            data: { isActive: false, isBR: false },
+            data: {
+                isActive: false,
+                isBR: false,
+                lang: navigator.language.includes("es") ? 'es' : 'en',
+                menuHome: { en: "Home", es: "Inicio" },
+                menuPortfolio: { en: "Portfolio", es: "Portafolio" },
+                menuContact: { en: "Contact", es: "Contacto" },
+                langOptPri: { en: "English", es: "Español" },
+                langOptSeg: { en: "Spanish", es: "Inglés" },
+                homeSubtitle: { en: "About me.", es: "Acerca de mí." },
+                homeContent: { 
+                    en: "I am an electronic engineer and software developer. "+
+                        "I like to learn new technologies and keep growing on my career. "+
+                        "I am currently working with Angular, Ionic and Jasmine frameworks "+
+                        "and I am improving my skills with Python and Kotlin.", 
+                    es: "Ingeniero electrónico y desarrollador de software. "+
+                        "Me gusta aprender nuevas tecnologías y seguir creciendo "+
+                        "en el área profesional. Actualmente trabajo con los frameworks "+
+                        "Angular, Ionic y Jasmine y estoy mejorando mis habilidades con Python y Kotlin." 
+                },
+                personalSiteDesc:{
+                    en: "This is my personal site, where I show some projects and contact information.",
+                    es: "Es mi página personal, donde expongo algunos trabajos e información de contacto."
+                },
+                vscodeDesc:{
+                    en: "This is my personal site, where I show some projects and contact information.",
+                    es: "Fork de un <a href=\"https://github.com/xabikos/vscode-jasmine\" target=\"_blank\"> "+
+                        "snippet </a> adaptado al Coding Style Guide que utilizamos en "+
+                        "<a href=\"https://www.notedanalytics.com/\" target=\"_blank\">Noted Analytics</a>";
+                },
+                firstCommit: { en: "First commit", es: "Primer commit" },
+            },
             methods: {
                 newTab: function (url) {
                     window.open(url, "_blank");
-                }
+                },
+                changeLang: function(lang){
+                    app.lang = lang.includes("es") ? "en" : "es";
+                },
             }
         });
+        console.log(navigator.language);
+        console.log(app.lang)
+
         AOS.init({ duration: 950, });
     </script>
 </body>
