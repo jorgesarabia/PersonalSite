@@ -178,10 +178,9 @@
                         <div class="card is-hidden-tablet" data-aos="fade-right">
                             <div class="card-content my-mobile-card-content">
                                 <div class="media my-mobile-card-media">
-                                    <div class="media-left">
+                                    <div class="media-left" @click="newTab('https://github.com/jorgesarabia/PersonalSite')">
                                         <figure class="image is-64x64">
-                                            <img class="is-rounded" src="images/logo64x64.png"
-                                                alt="Placeholder image">
+                                            <img class="is-rounded" src="images/logo64x64.png" alt="Placeholder image">
                                         </figure>
                                     </div>
                                     <div class="media-content">
@@ -250,7 +249,7 @@
                         <div class="card is-hidden-tablet" data-aos="fade-right">
                             <div class="card-content my-mobile-card-content">
                                 <div class="media my-mobile-card-media">
-                                    <div class="media-left">
+                                    <div class="media-left" @click="newTab('https://github.com/jorgesarabia/vscode-jasmine')">
                                         <figure class="image is-64x64">
                                             <img class="is-rounded" src="images/Jasmine_logo64x64.png"
                                                 alt="Placeholder image">
@@ -385,7 +384,12 @@
     <script type="text/javascript">
         let app = new Vue({
             el: '#app',
-            data: { isActive: false, isBR: false }
+            data: { isActive: false, isBR: false },
+            methods: {
+                newTab: function (url) {
+                    window.open(url, "_blank");
+                }
+            }
         });
         AOS.init({ duration: 950, });
     </script>
