@@ -37,36 +37,24 @@
                 <div id="navbar" class="navbar-menu" v-bind:class="{'is-active': isActive}">
                     <div class="navbar-start">
                         <a class="navbar-item" href="#inicio">
-                            {{menuHome[lang]}}
+                            Inicio
                         </a>
 
                         <a class="navbar-item" href="#portfolio">
-                            {{menuPortfolio[lang]}}
+                            Portfolio
                         </a>
 
                         <a class="navbar-item" href="#contact">
-                            {{menuContact[lang]}}
+                            Contacto
                         </a>
-
-                    </div>
-                    <div class="navbar-end">
-
-                        <div class="navbar-item has-dropdown is-hoverable">
-                            <a class="navbar-link">
-                                {{langOptPri[lang]}}
-                            </a>
-                            <div class="navbar-dropdown">
-                                <a class="navbar-item" @click="changeLang(lang)">
-                                    {{langOptSeg[lang]}}
-                                </a>
-                            </div>
-                        </div>
 
                     </div>
                 </div>
 
-            </div> <!--Fin container-->
-        </nav> <!-- Final del navbar -->
+            </div>
+            <!--Fin container-->
+        </nav>
+        <!-- Final del navbar -->
 
         <!-- Seccion Home -->
         <section class="section" data-aos="zoom-in" id="inicio">
@@ -81,8 +69,14 @@
                         <h1 class="title">
                             Jorge Sarabia
                         </h1>
-                        <p class="subtitle"> {{homeSubtitle[lang]}} </p>
-                        <p> {{homeContent[lang]}} </p>
+                        <p class="subtitle">
+                            Acerca de mí.
+                        </p>
+                        <p>
+                            Ingeniero electrónico y desarrollador de software. Me gusta aprender nuevas tecnologías
+                            y seguir creciendo en el área profesional. Actualmente trabajo con los frameworks
+                            Angular, Ionic y Jasmine y estoy mejorando mis habilidades con Python y Kotlin.
+                        </p>
                         <br>
                         <p class="subtitle is-6 is-hidden-mobile">
                             <span class="tag is-info">JavaScript</span>
@@ -125,9 +119,12 @@
                             <!-- <span class="tag is-success my-mobile-tag">Laravel</span> -->
                         </p>
                     </div>
-                </div> <!--End columns-->
-            </div> <!--End container-->
-        </section> <!-- Fin seccion Home -->
+                </div>
+                <!--End columns-->
+            </div>
+            <!--End container-->
+        </section>
+        <!-- Fin seccion Home -->
 
         <!-- Seccion trabajos -->
         <section class="section" id="portfolio">
@@ -157,8 +154,9 @@
                                 </div>
 
                                 <div class="content">
-                                    <p v-html="personalSiteDesc[lang]"></p>
-                                    <br>
+                                    Es mi página personal, donde expongo algunos trabajos e
+                                    información de contacto.
+                                    <br> <br>
                                     <div class="has-text-centered">
                                         <div>
                                             <p class="is-size-3">
@@ -168,7 +166,7 @@
                                             </p>
                                         </div>
                                         <p class="is-size-7">
-                                            {{firstCommit[lang]}}<br>
+                                            Primer commit<br>
                                             <time datetime="2019-06-25">25/06/2019 - 06:56:02 PM</time>
                                         </p>
                                     </div>
@@ -180,8 +178,7 @@
                         <div class="card is-hidden-tablet" data-aos="fade-right">
                             <div class="card-content my-mobile-card-content">
                                 <div class="media my-mobile-card-media">
-                                    <div class="media-left"
-                                        @click="newTab('https://github.com/jorgesarabia/PersonalSite')">
+                                    <div class="media-left" @click="newTab('https://github.com/jorgesarabia/PersonalSite')">
                                         <figure class="image is-64x64">
                                             <img class="is-rounded" src="images/logo64x64.png" alt="Placeholder image">
                                         </figure>
@@ -203,8 +200,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> <!--End Mobile-->
-                    </div> <!--End Column-->
+                        </div>
+                        <!--End Mobile-->
+                    </div>
+                    <!--End Column-->
 
                     <div class="column">
                         <div class="card is-hidden-mobile" data-aos="fade-up">
@@ -225,8 +224,10 @@
                                 </div>
 
                                 <div class="content">
-                                    <p v-html="vscodeDesc[lang]"></p>
-                                    <br>
+                                    Fork de un <a href="https://github.com/xabikos/vscode-jasmine" target="_blank">
+                                        snippet </a> adaptado al Coding Style Guide que utilizamos en
+                                    <a href="https://www.notedanalytics.com/" target="_blank">Noted Analytics</a>
+                                    <br> <br>
                                     <div class="has-text-centered">
                                         <div>
                                             <p class="is-size-3">
@@ -237,7 +238,7 @@
                                             </p>
                                         </div>
                                         <p class="is-size-7">
-                                            {{firstCommit[lang]}}<br>
+                                            Primer commit<br>
                                             <time datetime="2019-05-13">13/05/2019 - 03:21:21 PM</time>
                                         </p>
                                     </div>
@@ -248,8 +249,7 @@
                         <div class="card is-hidden-tablet" data-aos="fade-right">
                             <div class="card-content my-mobile-card-content">
                                 <div class="media my-mobile-card-media">
-                                    <div class="media-left"
-                                        @click="newTab('https://github.com/jorgesarabia/vscode-jasmine')">
+                                    <div class="media-left" @click="newTab('https://github.com/jorgesarabia/vscode-jasmine')">
                                         <figure class="image is-64x64">
                                             <img class="is-rounded" src="images/Jasmine_logo64x64.png"
                                                 alt="Placeholder image">
@@ -272,8 +272,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> <!--End Mobile-->
-                    </div> <!--End Column-->
+                        </div>
+                        <!--End Mobile-->
+                    </div>
+                    <!--End Column-->
 
                     <div class="column">
                         <!-- Mobile -->
@@ -382,52 +384,13 @@
     <script type="text/javascript">
         let app = new Vue({
             el: '#app',
-            data: {
-                isActive: false,
-                isBR: false,
-                lang: navigator.language.includes("es") ? 'es' : 'en',
-                menuHome: { en: "Home", es: "Inicio" },
-                menuPortfolio: { en: "Portfolio", es: "Portafolio" },
-                menuContact: { en: "Contact", es: "Contacto" },
-                langOptPri: { en: "English", es: "Español" },
-                langOptSeg: { en: "Spanish", es: "Inglés" },
-                homeSubtitle: { en: "About me.", es: "Acerca de mí." },
-                homeContent: { 
-                    en: "I am an electronic engineer and software developer. "+
-                        "I like to learn new technologies and keep growing on my career. "+
-                        "I am currently working with Angular, Ionic and Jasmine frameworks "+
-                        "and I am improving my skills with Python and Kotlin.", 
-                    es: "Ingeniero electrónico y desarrollador de software. "+
-                        "Me gusta aprender nuevas tecnologías y seguir creciendo "+
-                        "en el área profesional. Actualmente trabajo con los frameworks "+
-                        "Angular, Ionic y Jasmine y estoy mejorando mis habilidades con Python y Kotlin." 
-                },
-                personalSiteDesc:{
-                    en: "This is my personal site, where I show some projects and contact information.",
-                    es: "Es mi página personal, donde expongo algunos trabajos e información de contacto."
-                },
-                vscodeDesc:{
-                    en: "Fork of a <a href='https://github.com/xabikos/vscode-jasmine' target='_blank'> "+
-                        "snippet </a> adapted to the Coding Style Guide that we use in "+
-                        "<a href='https://www.notedanalytics.com/' target='_blank'>Noted Analytics</a>",
-                    es: "Fork de un <a href='https://github.com/xabikos/vscode-jasmine' target='_blank'> "+
-                        "snippet </a> adaptado al Coding Style Guide que utilizamos en "+
-                        "<a href='https://www.notedanalytics.com/' target='_blank'>Noted Analytics</a>"
-                },
-                firstCommit: { en: "First commit", es: "Primer commit" },
-            },
+            data: { isActive: false, isBR: false },
             methods: {
                 newTab: function (url) {
                     window.open(url, "_blank");
-                },
-                changeLang: function(lang){
-                    app.lang = lang.includes("es") ? "en" : "es";
-                },
+                }
             }
         });
-        console.log(navigator.language);
-        console.log(app.lang)
-
         AOS.init({ duration: 950, });
     </script>
 </body>
